@@ -48,7 +48,7 @@ defmodule ColorStream.Mixfile do
       maintainers: ["Nick Veys", "Gabe Cook"],
       licenses: ["MIT"],
       links: %{
-        "GitHub" => "https://github.com/code-lever/color-generator-elixir",
+        "GitHub" => "https://github.com/code-lever/color-stream-elixir",
       }
     ]
   end
