@@ -7,6 +7,8 @@ defmodule ColorStream.Mixfile do
      elixir: "~> 1.1",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     description: description,
+     package: package,
      deps: deps]
   end
 
@@ -27,6 +29,27 @@ defmodule ColorStream.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [
+      {:dogma, "~> 0.0", only: :dev},
+      {:earmark, only: :dev},
+      {:ex_doc, "~> 0.10", only: :dev},
+    ]
+  end
+
+  defp description do
+    """
+    XXX
+    """
+  end
+
+  defp package do
+    [
+      files: ["lib", "mix.exs", "README*", "LICENSE*"],
+      maintainers: ["Nick Veys", "Gabe Cook"],
+      licenses: ["MIT"],
+      links: %{
+        "GitHub" => "https://github.com/code-lever/color-generator-elixir",
+      }
+    ]
   end
 end
