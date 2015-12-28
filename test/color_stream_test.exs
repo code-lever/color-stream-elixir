@@ -31,4 +31,12 @@ defmodule ColorStreamTest do
       assert ColorStream.rgb_to_hex(@triplet) == @expected
     end
   end)
+
+  test ":hex stream" do
+    values =
+      ColorStream.hex(hue: 0.5, saturation: 0.5, value: 0.5)
+      |> Enum.take(5)
+
+    assert 5 == Enum.count(values)
+  end
 end

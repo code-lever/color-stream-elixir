@@ -1,4 +1,43 @@
 defmodule ColorStream do
+  @moduledoc """
+  Functions for generating colors in a fairly nice-looking way.
+  """
+
+  @golden_ratio_conjugate 0.618033988749895
+
+  @doc """
+  Starts an infinite stream of colors generated as 6-character hex strings.
+
+  ## Options
+
+    * `:hue` - initial hue (0..1]
+    * `:saturation` - saturation (0..1)
+    * `:value` - value (0..1)
+  """
+  def hex(opts \\ []) do
+    Stream.resource(
+      fn ->
+        {
+          Keyword.get(opts, :hue, :random.uniform),
+          Keyword.get(opts, :saturation, :random.uniform),
+          Keyword.get(opts, :value, :random.uniform)
+        }
+      end,
+      fn {h, s, v} ->
+        h_updated = h + @golden_ratio_conjugate
+        hue = h_updated - trunc(h_updated)
+        {[hsv_to_hex(hue, s, v)], {hue, s, v}}
+      end,
+      fn _ ->
+        nil
+      end
+    )
+  end
+
+  def hsv_to_hex(h, s, v) when h >= 0 and h < 1 and s >= 0 and s <= 1 and v >= 0 and v <= 1 do
+    hsv_to_rgb(h, s, v)
+    |> rgb_to_hex
+  end
 
   def hsv_to_rgb(h, s, v) when h >= 0 and h < 1 and s >= 0 and s <= 1 and v >= 0 and v <= 1 do
     h_i = trunc(h * 6)
