@@ -38,7 +38,7 @@ defmodule ColorStream.Mixfile do
 
   defp description do
     """
-    XXX
+    Generate random colors that are fairly spaced out and look nice.
     """
   end
 
