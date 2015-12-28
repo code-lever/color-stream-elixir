@@ -1,6 +1,20 @@
 defmodule ColorStreamTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   doctest ColorStream
+
+  [
+    [{358, 0.8, 0.8}, {204, 40, 46}],
+    [{0.0, 0.8, 0.8}, {204, 40, 40}],
+    [{35, 0.2, 0.5}, {127, 116, 102}],
+    [{0.0, 0.0, 0.0}, {0, 0, 0}],
+  ]
+  |> Enum.each(fn ([triplet, expected]) ->
+    @triplet triplet
+    @expected expected
+    test "hsv360_to_rgb(#{inspect(@triplet)}) converts to #{inspect(@expected)}" do
+      assert ColorStream.hsv360_to_rgb(@triplet) == @expected
+    end
+  end)
 
   [
     [{0, 0, 0}, "000000"],
