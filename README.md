@@ -1,7 +1,7 @@
 # Color Stream
 
 [![Build Status](https://api.travis-ci.org/code-lever/color-stream-elixir.svg)](https://travis-ci.org/code-lever/color-stream-elixir)
-[![Hex Version](https://img.shields.io/hexpm/v/color_stream_elixir.svg "Hex Version")](https://hex.pm/packages/color_stream_elixir)
+[![Hex Version](https://img.shields.io/hexpm/v/color_stream.svg "Hex Version")](https://hex.pm/packages/color_stream)
 
 Generate random colors in a pleasing way, based on work from the [ColorGenerator](https://github.com/jpmckinney/color-generator) Ruby gem, and the [How to Generate Random Colors Programmatically](http://martin.ankerl.com/2009/12/09/how-to-create-random-colors-programmatically/) post by Martin Ankerl.
 
