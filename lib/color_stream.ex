@@ -18,9 +18,9 @@ defmodule ColorStream do
     Stream.resource(
       fn ->
         {
-          Keyword.get(opts, :hue, :random.uniform),
-          Keyword.get(opts, :saturation, :random.uniform),
-          Keyword.get(opts, :value, :random.uniform)
+          Keyword.get(opts, :hue, :rand.uniform()),
+          Keyword.get(opts, :saturation, :rand.uniform()),
+          Keyword.get(opts, :value, :rand.uniform())
         }
       end,
       fn {h, s, v} ->
