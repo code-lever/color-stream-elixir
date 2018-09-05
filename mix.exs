@@ -2,14 +2,16 @@ defmodule ColorStream.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :color_stream,
-     version: "0.0.3",
-     elixir: "~> 1.1",
-     build_embedded: Mix.env == :prod,
-     start_permanent: Mix.env == :prod,
-     description: description(),
-     package: package(),
-     deps: deps()]
+    [
+      app: :color_stream,
+      version: "0.1.0",
+      elixir: "~> 1.3",
+      build_embedded: Mix.env() == :prod,
+      start_permanent: Mix.env() == :prod,
+      description: description(),
+      package: package(),
+      deps: deps()
+    ]
   end
 
   # Configuration for the OTP application
@@ -23,7 +25,7 @@ defmodule ColorStream.Mixfile do
     [
       {:dogma, "~> 0.0", only: :dev},
       {:earmark, "~> 1.0", only: :dev},
-      {:ex_doc, "~> 0.19", only: :dev},
+      {:ex_doc, "~> 0.19", only: :dev}
     ]
   end
 
@@ -39,7 +41,7 @@ defmodule ColorStream.Mixfile do
       maintainers: ["Nick Veys", "Gabe Cook"],
       licenses: ["MIT"],
       links: %{
-        "GitHub" => "https://github.com/code-lever/color-stream-elixir",
+        "GitHub" => "https://github.com/code-lever/color-stream-elixir"
       }
     ]
   end
