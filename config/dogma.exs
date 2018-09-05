@@ -3,5 +3,5 @@ alias Dogma.Rule
 
 config :dogma,
   override: [
-    %Rule.LineLength{max_length: 100},
+    %Rule.LineLength{max_length: 100}
   ]

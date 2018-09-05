@@ -6,9 +6,9 @@ defmodule ColorStreamTest do
     [{358, 0.8, 0.8}, {204, 40, 46}],
     [{0.0, 0.8, 0.8}, {204, 40, 40}],
     [{35, 0.2, 0.5}, {127, 116, 102}],
-    [{0.0, 0.0, 0.0}, {0, 0, 0}],
+    [{0.0, 0.0, 0.0}, {0, 0, 0}]
   ]
-  |> Enum.each(fn ([triplet, expected]) ->
+  |> Enum.each(fn [triplet, expected] ->
     @triplet triplet
     @expected expected
     test "hsv360_to_rgb(#{inspect(@triplet)}) converts to #{inspect(@expected)}" do
@@ -22,9 +22,9 @@ defmodule ColorStreamTest do
     [{100, 100, 100}, "646464"],
     [{1, 128, 250}, "0180FA"],
     [{255, 0, 255}, "FF00FF"],
-    [{0, 128, 0}, "008000"],
+    [{0, 128, 0}, "008000"]
   ]
-  |> Enum.each(fn ([triplet, expected]) ->
+  |> Enum.each(fn [triplet, expected] ->
     @triplet triplet
     @expected expected
     test "rgb_to_hex(#{inspect(@triplet)}) converts to #{@expected}" do
